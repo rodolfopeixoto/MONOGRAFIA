@@ -1,0 +1,47 @@
+
+%%%%%-----------------------------------------------------------------
+\newboxedtheorem[boxcolor=orange,
+                 background=blue!5,
+                 titlebackground=blue!20,
+                 titleboxcolor = black]{requisito}{Requisito}{ReqContador}
+ 
+\def\defreq#1{\textsc{ Defini\c{c}\~{a}o: }{\textbf{#1}}}
+\newenvironment{especific}
+                         {
+                         \renewcommand{\labelenumi}{\theReqContador.\theenumi}
+                         \begin{enumerate}}{\end{enumerate}
+                         }
+%%%%%----------------------------------------------------------------
+%-------------------------------- Highligthing ---------------------------------
+
+\lstset{
+    language=C,
+    basicstyle=\footnotesize\ttfamily,
+    columns=flexible,
+    numberbychapter=false,
+    showstringspaces=false,
+    tabsize=2,
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    numbers=left,
+    numberstyle=\scriptsize\ttfamily\color{Gray},
+    emphstyle=\color{OrangeRed},
+    commentstyle=\color{Gray}\textit,
+    stringstyle=\textit,
+    keywordstyle=\textbf,
+    morekeywords={@self, @caller, @const, @local},
+    % emph={[2]Funcionalidade, Como},
+    % emphstyle=[2]\color{MidnightBlue},
+}
+
+%\DeclareCaptionFont{white}{\color{White}\footnotesize\bfseries}
+%\DeclareCaptionFormat{listing}{\colorbox{BrickRed}{\parbox{\textwidth}{#1#2#3}}}
+%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+% Renomear listing e listings -> c\'{o}digo e c\'{o}digos
+\renewcommand*\lstlistingname{C\'{o}digo}
+\renewcommand*\lstlistlistingname{Lista de C\'{o}digos}
+
+\hyphenation{o-ca-sio-nan-do}

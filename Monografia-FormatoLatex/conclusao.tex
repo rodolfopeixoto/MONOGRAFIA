@@ -1,0 +1,69 @@
+%% TCC - Monografia
+%% Ci\^{e}ncia da Computa\c{c}\~{a}o - LCMAT - CCT - UENF, 2018
+%% 
+
+% ---
+\chapter*[Conclus\~{a}o]{Conclus\~{a}o}                  \label{conclusao}
+\addcontentsline{toc}{chapter}{Conclus\~{a}o}
+
+% As conclus\~{o}es deste trabalho podem ser divididas em tr\^{e}s partes: sobre as dificuldades encontradas no desenvolvimento do TCC, sobre o que foi feito para atingir os objetivos, e sobre o que poder\'{a} ser feito no futuro para melhorar ou complementar a pesquisa na dire\c{c}\~{a}o deste trabalho.
+
+% Sobre as dificuldades encontradas podemos mencionar as seguintes:
+% Neste trabalho foi considerado o estudo de alguns aspectos te\'{o}rico-pr\'{a}ticos da engenharia de requisitos e
+% Vale a pena observar que por raz\~{o}es pr\'{a}ticas desse trabalho, no estudo de caso n\~{a}o foram consideradas todos os.....
+
+% A metodologia utilizada, facilitou a descoberta e a classifica\c{c}\~{a}o dos mesmos, pois foi observado que quanto mais
+
+% Em futuros trabalhos, poder\~{a}o ser considerados tamb\'{e}m, ....
+%\section{Dificuldades}
+
+Durante o desenvolvimento deste trabalho de Monografia, a maior dificuldade talvez tenha sido na escrita e no entendimento do como mostrar o problema e a hipótese que se queria trabalhar.
+%\section{Objetivos}
+O objetivo deste trabalho de monografia foi atingido a partir da implementação computacional das duas arquiteturas apresentadas, tendo uma experiência prática para gerar os resultados em quanto a escalabilidade, manutenibilidade e uso de multi-tecnologias que serão mostrados a seguir. 
+%\section{O que poderá ser feito para melhorar ou complementar o trabalho}
+Em relação a uma melhoras deste trabalho, acredita-se necessário evoluir a arquitetura e testar outras formas como por exemplo \textit{performance}, comunicação via mensagens, assim como outras abordagens da arquitetura baseada em microsserviços. %, seria muito rico para complementar o trabalho. 
+
+%\section{Resultados Finais}
+Com a experiência do desenvolvimento da arquitetura em camadas e também da baseada em microsserviços podemos listar alguns pontos sobre ambas as arquiteturas.
+%\subsection{Implementação da Arquitetura}
+A implementação baseada em microsserviços se mostrou bem mais complexa e demorada, haja visto que você precisa construir diversas camadas, duplica código e sua implementação exige cautela. A monolítica é muito mais simples, pois tudo que você precisa está disponível em um só lugar.
+
+%\subsection{Escalabilidade}
+Em termos de escalabilidade ambas arquiteturas se comportam bem, porém com uma arquitetura baseada em microsserviços você tem a facilidade de escalar um determinado contexto que tenha se tornado um gargalo, o que gera também diminuição de custos. Uma arquitetura monolítica, você terá a necessidade de levantar a base toda do código, muitas vezes o gargalo é em uma determinada funcionalidade e mesmo assim, teríamos que levantar toda a base de código.
+
+%\subsection{Manutenibilidade}
+Já do ponto de vista da manutenção, a arquitetura monolítica mostrou-se ser um pouco mais complexa, visto que muitas vezes se faz necessário entender algumas regras mais abrangentes. A arquitetura de microsserviços se mostrou mais simples de evoluir e manter, haja vista que são contextos menores e se há uma falha naquele contexto, vamos direto na parte que está com \textit{bug}.
+
+%\subsection{Multi tecnologia}
+
+Há complexidade em adicionar novas linguagens de programação ou frameworks em uma arquitetura monolítica, haja visto que esse tipo de arquitetura não foi projetada com esse intuito, porém é possível. Com a arquitetura baseada em microsserviços ficou claro que é mais fácil de se desenvolver contextos em tecnologias que favoreçam a resolução daquele contexto, pois haverá pequenos projetos com complexidades menores para se manter. Por exemplo, na abordagem criada em microsserviços, a textit{API Gateway} foi implementada para um contexto específico, ser a porta de entrada das requisições e o mesmo ser o único sistema a se comunicar com os outros sistemas internos. Para a resolução desse problema o NodeJS foi a escolha, porém poderiamos utilizar o framework Ruby on Rails. 
+
+%\subsection{Deploy}
+Já em relação ao deploy também na arquitetura baseada em microsserviço foi mais rápido, porém mais complexa, pois são diversos sistemas. A vantagem da arquitetura em camadas é que, a mesma, é enviada uma única vez; como o sistema exemplo utilizado neste trabalho ainda é pequeno o deploy mesmo sendo mais demorado que a baseada em microsserviços, ainda sim é muito rápido.
+
+%\subsection{Logs}
+Um grande problema da arquitetura baseada em microsserviços são os logs descentralizados e precisamos aqui recorrer a um software de terceiros (qual?), mais um software que demanda manutenção. Com o monolítico não é necessário, visto que os logs já estão centralizados na aplicação.
+%\subsection{Autorização e Autenticação}
+
+Em relação à autorização e autenticação, a arquitetura monolítica é mais simples e rápida a implementação, pois no exemplo deste trabalho utilizamos uma gem chamada \textit{devise} a configuramos facilmente. Já no microsserviços há todo um contexto para se preocupar, mesmo com o Firebase nos facilitando de desenvolver a parte de autenticação.
+
+%\subsection{tolerância a falhas}
+A arquitetura monolítica se for bem projetada há possibilidade de projetar uma arquitetura dessas para ser ante falhas em termos de código e de forma mais manual. Mas de modo geral, caso deixe de funcionar uma parte da aplicação, normalmente será um efeito colateral, por exemplo o banco de dados por algum motivo ter um problema, a aplicação inteira sofre esse efeito.
+
+A arquitetura baseada em microsserviços consegue lidar muito bem com esse problema, caso não seja a parte central como a de usuário, Autenticação, autorização ou a API Gateway no caso desse projeto. Como são partes centrais, elas sofrem efeitos em cadeia e você não terá acesso ao sistema. Mas caso seja um problema na parte de comentários e posts, não teríamos problema para acessar outras partes do software, pois iria carregar normalmente em nossa aplicação mobile.
+
+Para essa comparação podemos analisar que depende muito do que estaríamos descrevendo sobre tolerância a falhas.
+
+%\subsection{Resumo final}
+De forma geral e para concluir este trabalho, é importante entender que não há melhor arquitetura, mas sim a que mais vai se adequar a aquele projeto e equipe. Diante de tantas informações que foi possível extrair desse projeto, acredito que o melhor é obter a compreensão que as arquiteturas quando bem estudadas e aplicadas de forma correta poderá diminuir e aumentar a produtividade da equipe em resolver problemas.
+
+
+\section{Trabalhos Futuros}
+Está faltando trabalhos futuros, ou tarefas ou testes que vc considere sejam importantes de serem realizados como continuação de seu trabalho.
+
+
+
+% Há algumas vantagens quanto ao desenvolvimento, como toda base de código está disponível em um lugar só, basta executar baixar de um repositório git sua base de código e então terá todo seu projeto disponível e de fácil acesso. Como o projeto é único a base de logs também é única, o que representa uma grande vantagem, não necessitando de um software de de terceiros. 
+
+
+% Há também desvantagens, em termos de manutenção como a base de código utilizada como exemplo, na base há diversas regras de negócio e possível e ocorreu durante o desenvolvimento alguns bugs que demoraram a ser resolvido, devido a base de código e a falta de teste inicialmente. Para escalar a aplicação se faz necessário replicar toda a base de código novamente, o que aumenta o custo dos recursos.

@@ -1,0 +1,360 @@
+
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% Adapta\c{c}\~{a}o para a UENF-CCT-LCMAT-Ciencia da Computa\c{c}\~{a}o:
+%     Prof. Ausberto S. Castro Vera (ascv@uenf.br), 2013-2018
+% ------------------------------------------------------------------------
+
+% verso e anverso:
+%\documentclass[12pt,openright,twoside,a4paper,english,french,spanish,brazil]{abntex2}
+
+% apenas verso:	
+ \documentclass[12pt,oneside,a4paper,english,french,spanish,brazil]{abntex2}
+
+
+%%% ------------ Pacotes Principais --
+\input{pacotes.tex}
+
+%%% ----------------------------------
+
+
+%% ---
+%% Informa\c{c}\~{o}es de dados para CAPA e FOLHA DE ROSTO
+%% --- Arquiteturas de softwares para softwares modernos: Microsserviços e Camadas \\
+\titulo{Arquiteturas de Microsserviço e Camadas para Softwares Modernos: Uma Análise Comparativa}
+\autor{Rodolfo Gomes Peixoto}
+\local{Campos dos Goytacazes, RJ}
+%\data{2013, v-1.6.1}
+\data{\today}   %%%% {06 de dezembro de 2018}
+\orientador{Profª. Annabell Del Real Tamariz}
+\coorientador{}
+\instituicao{%
+  Universidade Estadual do Norte Fluminense Darcy Ribeyro -- UENF
+  \par
+  Centro de Ci\^{e}ncia e Tecnologia -- CCT
+  \par
+  Laborat\'{o}rio de Ci\^{e}ncias Matem\'{a}ticas -- LCMAT
+  \par
+  Curso de Ci\^{e}ncia da Computa\c{c}\~{a}o}
+
+\tipotrabalho{Monografia (Bacharelado)}
+% O preambulo deve conter o tipo do trabalho, o objetivo,
+% o nome da institui\c{c}\~{a}o e a \'{a}rea de concentra\c{c}\~{a}o
+\preambulo{Trabalho de Monografia apresentado ao Curso de Gradua\c{c}\~{a}o em Ci\^{e}ncia da Computa\c{c}\~{a}o da Universidade Estadual do Norte Fluminense Darcy Ribeiro como requisito para a obten\c{c}\~{a}o do t\'{\i}tulo de Bacharel em Ci\^{e}ncia da Computa\c{c}\~{a}o, sob orienta\c{c}\~{a}o da \imprimirorientador.}
+% ---
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% O tamanho do par\'{a}grafo \'{e} dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espa\c{c}amento entre um par\'{a}grafo e outro:
+\setlength{\parskip}{0.2cm}  % tente tamb\'{e}m \onelineskip
+
+\makeindex
+
+\begin{document}
+
+\input{definicoes.tex}
+% Retira espa\c{c}o extra obsoleto entre as frases.
+\frenchspacing
+
+% ---
+% Capa
+% ---
+\imprimircapa
+\imprimirfolhaderosto*
+
+\begin{fichacatalografica}
+	\vspace*{\fill}					% Posi\c{c}\~{a}o vertical
+	\hrule							% Linha horizontal
+	\begin{center}					% Minipage Centralizado
+	\begin{minipage}[c]{12.5cm}		% Largura
+	
+	\imprimirautor
+	
+	\hspace{0.5cm} \imprimirtitulo  / \imprimirautor. --
+	\imprimirlocal, \imprimirdata-
+	
+	\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
+	
+	\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
+	
+	\hspace{0.5cm}
+	\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~UENF-CCT-LCMAT-Ci\^{e}ncia da Computa\c{c}\~{a}o,
+	\imprimirdata.}\\
+	
+	\hspace{0.5cm}
+    %%%%  Lista de Areas e sub-areas relacionadas com o TCC
+		1. Engenharia de Requisitos.
+		2. Orienta\c{c}\~{a}o a Aspectos.
+		3. Engenharia da Seguran\c{c}a.
+		4. Confidencialidade.
+		5. Dom\'{\i}nios de Requisitos.
+		6. Metodologia\\ 			
+	
+	\hspace{8.75cm} CDU 004.41 : 004.4'2 : \\  %% Classifica\c{c}\~{a}o Decimal Universal (CDU)
+      %  004  Ci\^{e}ncia e tecnologia inform\'{a}ticas. Computa\c{c}\~{a}o. Processamento de dados
+      %  004.05 Qualidade dos sistemas e do software
+      %  004.41 Engenharia de software
+      %  004.4`2  Ferramentas para desenvolvimento de software
+      %  004.8  Intelig\^{e}ncia artificial
+      %  004.9  T\'{e}cnicas baseadas em computadores e orientadas para aplica\c{c}\~{o}es
+      %  004.92 Infografia. Computa\c{c}\~{a}o gr\'{a}fica
+      %  004.94 Simula\c{c}\~{a}o
+      %  004.67 Sistemas para dados num\'{e}ricos
+      %  519.8  Teorias e m\'{e}todos de investiga\c{c}\~{a}o operacional matem\'{a}tica
+      %  519.85 Programa\c{c}\~{a}o matem\'{a}tica
+      %  658.5  T\'{e}cnicas e planeamento de produ\c{c}\~{a}o. Concep\c{c}\~{a}o. Gest\~{a}o e controlo da produ\c{c}\~{a}o
+
+      % CDU para outras areas da Computa\c{c}\~{a}o:
+      %          http://www.udcc.org/udcsummary/php/index.php?id=13358&lang=pt
+
+	
+	\end{minipage}
+	\end{center}
+	\hrule
+\end{fichacatalografica}
+% ---
+
+\begin{folhadeaprovacao}
+
+  \begin{center}
+    {\ABNTEXchapterfont\large\imprimirautor}
+
+    \vspace*{\fill}\vspace*{\fill}
+    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+    \vspace*{\fill}
+
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+        \imprimirpreambulo
+    \end{minipage}%
+    \vspace*{\fill}
+   \end{center}
+
+   Trabalho Aprovado. \\
+ %  \imprimirlocal, \imprimirdata
+
+   \assinatura{\textbf{\imprimirorientador} \\ Orientadora}
+   \assinatura{\textbf{Prof. Dr. Leonard Barreto Moreira} \\ UFF}
+   \assinatura{\textbf{Prof. Msc. Rodrigo Manhães} \\DIC-UENF}
+ %  \assinatura{\textbf{Prof. Banca03} \\ Convidado 3}
+   %\assinatura{\textbf{Professor} \\ Convidado 4}
+
+   \begin{center}
+    \vspace*{0.5cm}
+    {\large\imprimirlocal}
+   % \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+  \end{center}
+
+\end{folhadeaprovacao}
+
+% Dedicat\'{o}ria
+\input{dedicatoria.tex}
+
+% ---
+% Agradecimentos
+\input{agradecimentos.tex}
+
+
+
+% Ep\'{\i}grafe
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{"Talvez n\~{a}o tenha conseguido fazer o melhor, mas lutei para que o melhor fosse feito.
+        N\~{a}o sou o que deveria ser, mas Gra\c{c}as a Deus, n\~{a}o sou o que era antes".\\(Marthin Luther King) }
+	\end{flushright}
+\end{epigrafe}
+
+% ---
+% RESUMOS
+% resumo em portugu\^{e}s
+\begin{resumo}
+Com o surgimento de sistemas cada vez mais complexos a área da engenharia de software iniciou um debate mais aflorado sobre arquiteturas de software, onde  a arquitetura baseada em microsserviços e a em camadas começaram a ser o foco de diversos debates sobre suas vantagens e desvantagens. Há engenheiros que são enfáticos em dizer que todos os sistemas deveriam utilizar a arquitetura baseada em microsserviços, outros que a arquitetura monolítica é mais eficiente, então o objetivo deste trabalho é comparar de forma empírica dois sistemas, cada um deles desenvolvido seguindo os conceitos das arquiteturas, tanto em camadas, quanto a baseada em microsserviços. O método que será utilizado para a realização deste trabalho é o qualitativo, com a finalidade de implementar e analisar as arquiteturas, assim haverá a possibilidade de fazer um estudo descritivo sobre as ambas. Com essa análise empírica sobre as arquiteturas, podemos verificar que cada arquitetura tem suas vantagens e desvantagens e os engenheiros de softwares ou projetistas deve levar em consideração esses fatores. Os resultados revelaram que a implementação baseada em microsserviços se mostrou mais complexa e a em camadas mais simples, em  termos de escalabilidade ambas arquiteturas se comportam bem, entretanto em uma arquitetura baseada em microsserviços você tem a facilidade de escalar um determinado contexto que tenha se tornado um gargalo no projeto, já do ponto de vista da manutenção, a arquitetura monolítica mostrou-se ser um pouco mais complexa, visto que muitas das vezes se faz necessário entender algumas regras mais abrangentes, em relação ao deploy a arquitetura baseada em microsserviço foi mais rápida, porém mais complexa, pois são diversos sistema a serem enviados, um grande problema da arquitetura baseada em microsserviços são os logs descentralizados e precisamos recorrer a um software de terceiros,  em relação à autorização e autenticação, a arquitetura monolítica é mais simples e rápida a implementação, em termos de falha em uma parte do sistema a arquitetura baseada em microsserviços se comporta melhor, pois seus sistemas são isolados. De forma geral e para concluir este trabalho, é importante entender que não há melhor arquitetura, mas sim a que mais se adequá a aquele projeto e equipe.
+
+AQUI vc deve trazer uma introdução, após colocar seu objetivo com este trabalho, depois apresentar a metodologia rapidamente e colocar os seus resultados.
+ \vspace{\onelineskip}
+
+ \noindent
+ \textbf{Palavras-chaves}: engenharia de software; arquiteturas; microsserviços; camadas; monolítico;.
+\end{resumo}
+
+% resumo em ingl\^{e}s
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+  Modern systems are becoming increasingly complex, and software engineering has started a more intense debate about software architectures, where microservice-based and layered architecture have become the focus of many debates about their advantages and disadvantages. There are engineers who are emphatic in saying that all systems should use microservice based architecture, others that monolithic architecture is more efficient, so the aim of this paper is to empirically compare two systems, each developed following the concepts of architectures. , both layered and microservice based. The method that will be used for this work is the qualitative one, with the purpose of implementing and analyzing the architectures, so there will be the possibility to make a descriptive study about both. With this empirical analysis of architectures, we can see that each architecture has its advantages and disadvantages, and software engineers or designers should consider these factors. The results revealed that the microservice-based implementation was more complex and the layered implementation simpler in terms of scalability, both architectures behave well, however in a microservice-based architecture you have the ability to scale a particular context that has become a bottleneck in the design, from a maintenance standpoint, the monolithic architecture proved to be a bit more complex, as it is often necessary to understand some broader rules, compared to deploying the microservice based architecture was more fast but more complex because there are so many systems to send, a big problem of the microservice based architecture is the decentralized logs and we need to use third party software, regarding authorization and authentication, the monolithic architecture is simpler and faster implementation in terms of failure in one part of the air system microservice-based architecture behaves better because its systems are isolated. In general and to conclude this work, it is important to understand that there is no better architecture, but the one that best fits that project and team.
+
+  \vspace{\onelineskip}
+
+  \noindent
+  \textbf{Key-words}: engenharia de software. microsserviços. monolítico. arquitetura em camadas.
+ \end{otherlanguage*}
+\end{resumo}
+
+
+% inserir lista de ilustra\c{c}\~{o}es
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+-
+% inserir lista de tabelas
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+
+% inserir lista de abreviaturas e siglas
+\input{siglas.tex}
+
+
+
+
+% inserir o sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+% ------------------ Arquivos Cap\'{\i}tulos ----------------------------------------
+\input{cap01.tex}     % Introdu\c{c}\~{a}o
+\input{cap02.tex}        % Engenharia de
+\input{cap03.tex}        % Metodologia
+\input{cap04.tex}        % Implement\c{c}\~{a}o
+\input{cap05.tex}        % Implement\c{c}\~{a}o
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}%
+% ---
+% ---
+\input{conclusao.tex}   % Conclus\~{a}o
+
+% ----------------------------------------------------------
+% ELEMENTOS P\'{O}S-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+
+% ----------------------------------------------------------
+% Refer\^{e}ncias bibliogr\'{a}ficas:   \cite{abc}   \citeonline{xyz}
+% ----------------------------------------------------------
+%\bibliographystyle{alpha}  %%%% Outros estilos: plain, apacite, plainnat, etc.
+
+\bibliography{minhaMonografiaBib}
+
+
+% ----------------------------------------------------------
+% Ap\^{e}ndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os ap\^{e}ndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma p\'{a}gina indicando o in\'{\i}cio dos ap\^{e}ndices
+\partapendices
+
+% ----------------------------------------------------------
+\input{UDC.tex}
+\input{AreasCNPq.tex}
+% ----------------------------------------------------------
+
+\end{apendicesenv}
+% ---
+
+
+\end{document}
+
+
+
+
+
+
+
+% ----------------------------------------------------------
+% Gloss\'{a}rio
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orienta\c{c}\~{o}es sobre o gloss\'{a}rio.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Ap\^{e}ndices
+% ----------------------------------------------------------
+% ---
+% Inicia os ap\^{e}ndices
+% ---
+\begin{apendicesenv}
+
+% Imprime uma p\'{a}gina indicando o in\'{\i}cio dos ap\^{e}ndices
+\partapendices
+
+% ----------------------------------------------------------
+\chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+\lipsum[50]
+
+% ----------------------------------------------------------
+\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% ----------------------------------------------------------
+\lipsum[55-57]
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+% Imprime uma p\'{a}gina indicando o in\'{\i}cio dos anexos
+\partanexos
+
+% ---
+\chapter{Morbi ultrices rutrum lorem.}
+% ---
+\lipsum[30]
+
+% ---
+\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+parturient montes nascetur ridiculus mus}
+% ---
+
+\lipsum[31]
+
+% ---
+\chapter{Fusce facilisis lacinia dui}
+% ---
+
+\lipsum[32]
+
+\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+
+\printindex
+
+\end{document}
